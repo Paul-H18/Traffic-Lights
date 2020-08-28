@@ -8,6 +8,8 @@ public class TrafficLight {
 
     public state currentState;
     int id, heir;
+
+
     public String r;
 
     public TrafficLight(int x, int y) {
@@ -57,6 +59,8 @@ public class TrafficLight {
     }
 
 
+
+
     public int getHeir(){
         return heir;
     }
@@ -67,3 +71,4 @@ public class TrafficLight {
 
 
 }
+
