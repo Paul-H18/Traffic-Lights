@@ -17,8 +17,6 @@ public class TrafficLight {
     }
 
 
-
-
     public void setRed(){
         currentState = state.RED;
     }
@@ -43,6 +41,17 @@ public class TrafficLight {
                 break;
             case YELLOW:
                 r = "The Traffic Light's glowing Yellow!";
+                break;
+            case RED:
+                r = "The Traffic Light's glowing Red!";
+                break;
+            case BLINKING:
+                r = "The Traffic Light's blinking!";
+                break;
+            case OFF:
+                r = "The Traffic Light isn't glowing!";
+                break;
+
         }
         return r;
     }
@@ -51,8 +60,6 @@ public class TrafficLight {
     public int getHeir(){
         return heir;
     }
-
-
 
     public int getId(){
       return id;

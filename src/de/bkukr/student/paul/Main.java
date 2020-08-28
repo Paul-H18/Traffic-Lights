@@ -6,7 +6,6 @@ public class Main {
 	    TrafficLight tl = new TrafficLight(45, 100);
 
 
-	    tl.setGreen();
         tl.printState();
     }
 
