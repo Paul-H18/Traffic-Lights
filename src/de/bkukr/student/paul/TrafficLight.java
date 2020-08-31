@@ -19,15 +19,15 @@ public class TrafficLight {
     }
 
 
-    public void setRed(){
+    private void setRed(){
         currentState = state.RED;
     }
 
-    public void setYellow(){
+    private void setYellow(){
         currentState = state.YELLOW;
     }
 
-    public void setGreen(){
+    private void setGreen(){
         currentState = state.GREEN;
     }
 
