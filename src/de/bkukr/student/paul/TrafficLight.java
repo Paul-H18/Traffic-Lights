@@ -8,6 +8,7 @@ public class TrafficLight {
 
     public state currentState;
     int id, heir;
+    public int time = 2;
 
 
     public String r;
@@ -19,25 +20,25 @@ public class TrafficLight {
     }
 
 
-    private void setRed(){
+    private void setRed() {
         currentState = state.RED;
     }
 
-    private void setYellow(){
+    private void setYellow() {
         currentState = state.YELLOW;
     }
 
-    private void setGreen(){
+    private void setGreen() {
         currentState = state.GREEN;
     }
 
-    public void printState(){
+    public void printState() {
         System.out.println("The Traffic Light's glowing: " + currentState);
     }
 
-    public String getState(){
+    public String getState() {
 
-        switch(currentState){
+        switch (currentState) {
             case GREEN:
                 r = "The Traffic Light's glowing Green!";
                 break;
@@ -53,22 +54,62 @@ public class TrafficLight {
             case OFF:
                 r = "The Traffic Light isn't glowing!";
                 break;
-
         }
         return r;
     }
 
 
-
-
-    public int getHeir(){
+    public int getHeir() {
         return heir;
     }
 
-    public int getId(){
-      return id;
+    public int getID() {
+        return id;
+    }
+
+    public void setID(int x) {
+        id = x;
+    }
+
+    public void setHeirByID(int x){
+        heir = x;
+    }
+
+    public void shiftRed(int x){
+        setGreen();
+        printState();
+        try{
+            Thread.sleep(x*3000);
+        } catch (InterruptedException e){}
+        setYellow();
+        printState();
+        try{
+            Thread.sleep(x*1000);
+        } catch (InterruptedException e){}
+        setRed();
+        printState();
+    }
+
+    public void shiftGreen(int x){
+        setRed();
+        printState();
+        try{
+            Thread.sleep(x*3000);
+        } catch (InterruptedException e){}
+        setYellow();
+        printState();
+        try{
+            Thread.sleep(x*1000);
+        } catch (InterruptedException e){}
+        setGreen();
+        printState();
     }
 
 
+
+
+
 }
+
+
 

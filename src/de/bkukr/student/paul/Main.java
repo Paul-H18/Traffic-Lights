@@ -6,6 +6,10 @@ public class Main {
 	    TrafficLight tl = new TrafficLight(45, 8);
 
         tl.printState();
+
+        tl.shiftRed(1);
+
+
     }
 
 
