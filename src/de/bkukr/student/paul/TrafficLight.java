@@ -7,16 +7,23 @@ public class TrafficLight {
     }
 
     public state currentState;
-    int id, heir;
+    int id;
     public int time = 2;
+    TrafficLight previous;
 
 
     public String r;
 
-    public TrafficLight(int x, int y) {
+    public TrafficLight(int ID) {
         currentState = state.BLINKING;
-        id = x;
-        heir = y;
+        id = ID;
+    }
+
+    public TrafficLight(int ID, TrafficLight prev){
+        currentState = state.BLINKING;
+        id = ID;
+        previous = prev;
+
     }
 
 
@@ -58,11 +65,6 @@ public class TrafficLight {
         return r;
     }
 
-
-    public int getHeir() {
-        return heir;
-    }
-
     public int getID() {
         return id;
     }
@@ -71,11 +73,8 @@ public class TrafficLight {
         id = x;
     }
 
-    public void setHeirByID(int x){
-        heir = x;
-    }
 
-    public void shiftRed(int x){
+    public void shiftRed(int x) {
         setGreen();
         printState();
         try{
