@@ -38,6 +38,14 @@ public class TrafficLight {
         currentState = state.GREEN;
     }
 
+    private void setBlinking() {
+        currentState = state.BLINKING;
+    }
+
+    private void turnOff() {
+        currentState = state.OFF;
+    }
+
     public void printState() {
         System.out.println("The Traffic Light's glowing: " + currentState);
     }
@@ -116,6 +124,21 @@ public class TrafficLight {
             return true;
         } else {
             return false;
+        }
+    }
+
+    public void equalWithPrev() {
+        switch (previous.currentState){
+            case RED:
+                setRed();
+            case YELLOW:
+                setYellow();
+            case GREEN:
+                setGreen();
+            case BLINKING:
+                setBlinking();
+            case OFF:
+                turnOff();
         }
     }
 
