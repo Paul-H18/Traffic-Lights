@@ -19,7 +19,7 @@ public class TrafficLight {
         id = ID;
     }
 
-    public TrafficLight(int ID, TrafficLight prev){
+    public TrafficLight(int ID, TrafficLight prev) {
         currentState = state.BLINKING;
         id = ID;
         previous = prev;
@@ -88,7 +88,7 @@ public class TrafficLight {
         printState();
     }
 
-    public void shiftGreen(int x){
+    public void shiftGreen(int x) {
         setRed();
         printState();
         try{
@@ -103,7 +103,7 @@ public class TrafficLight {
         printState();
     }
 
-    public boolean prevGreen(){
+    public boolean prevGreen() {
         if(previous.currentState == state.GREEN){
             return true;
         } else {
@@ -111,7 +111,7 @@ public class TrafficLight {
         }
     }
 
-    public boolean prevRed(){
+    public boolean prevRed() {
         if(previous.currentState == state.RED){
             return true;
         } else {
