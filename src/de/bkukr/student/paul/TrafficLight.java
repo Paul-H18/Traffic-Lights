@@ -131,14 +131,19 @@ public class TrafficLight {
         switch (previous.currentState){
             case RED:
                 setRed();
+                break;
             case YELLOW:
                 setYellow();
+                break;
             case GREEN:
                 setGreen();
+                break;
             case BLINKING:
                 setBlinking();
+                break;
             case OFF:
                 turnOff();
+                break;
         }
     }
 

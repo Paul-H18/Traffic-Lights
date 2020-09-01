@@ -7,11 +7,12 @@ public class Main {
 	    TrafficLight tl = new TrafficLight(45);
 	    TrafficLight tl2 = new TrafficLight(46, tl);
 
-        tl.printState();
+        tl.shiftRed(0);
 
-        tl.shiftRed(1);
+        tl2.equalWithPrev();
 
-        System.out.println(tl2.prevGreen());
+        System.out.println("Status TL: " + tl.getState());
+        System.out.println("Status TL2: " + tl2.getState());
 
 
     }
