@@ -23,7 +23,6 @@ public class TrafficLight {
         currentState = state.BLINKING;
         id = ID;
         previous = prev;
-
     }
 
 
@@ -102,6 +101,22 @@ public class TrafficLight {
         } catch (InterruptedException e){}
         setGreen();
         printState();
+    }
+
+    public boolean prevGreen(){
+        if(previous.currentState == state.GREEN){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public boolean prevRed(){
+        if(previous.currentState == state.RED){
+            return true;
+        } else {
+            return false;
+        }
     }
 
 
